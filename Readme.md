@@ -1,9 +1,12 @@
-# Convolutional Variational Autoencoder, Tensorflow 2.0a Implmentation
+# Variational Autoencoders, Tensorflow 2.0a Implmentation
 
-This repository contains an implementation of variational autoencoders with convolutional encoder/decoder,
-where everything except the convolutional part is based on the paper [1] below.
+This repository contains an implementation of various variational autoencoders.
+
+1. MNIST VAE - A VAE based on the original VAE paper [1], with convolutional decoders and encoders.
 
 The implementation is based on the example in Tensorflow documentation [2]. 
+
+Will likely convert to a more structured Keras approach and do away with the custom training. 
 
 Some key differences/additions: 
 1. Cleaned up code to make it more readable. 
@@ -12,6 +15,9 @@ Some key differences/additions:
 in the paper. This speeds up the training and is actually simpler than what the code originally had. 
 4. Added weight checkpoints, metrics, Tensorboard functionality that allows you to visualize 
 conv layers, generative samples, and so on.
+
+Currently there are issues getting the initial profiling and graph data to show up in Tensorboard. Eliminating the 
+custom training of the model may help with that.
 
 # Setup
 
