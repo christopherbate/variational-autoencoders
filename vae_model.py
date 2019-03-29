@@ -13,7 +13,6 @@ class CVAE(tf.keras.Model):
     3) Vectors mu, sigma are the outputs of q(z|x_sample) - the "inference_net"
     4) 
     '''
-
     def __init__(self, latent_dim, img_shape=(28, 28, 1)):
         super(CVAE, self).__init__(name='cvae')
         self.latent_dim = latent_dim
@@ -122,7 +121,7 @@ def compute_loss(model, x):
     the mean is zero and the variance is 1,
     uncorrelated among the components.
     '''
-    regularization_loss = -0.5*(1+logvar-tf.square(mean)-tf.exp(logvar))
+    regularization_loss = -1*(1+logvar-tf.square(mean)-tf.exp(logvar))
     regularization_loss = tf.reduce_sum(regularization_loss, axis=1)
 
     # print("Regularization Loss shape: ", regularization_loss.shape)

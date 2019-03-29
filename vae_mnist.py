@@ -1,12 +1,7 @@
 import tensorflow as tf
 import os
 import time
-import numpy as numpy
-import matplotlib.pyplot as plt
-import PIL
-import imageio
 import vae_model
-import time_format
 from datetime import datetime
 
 (train_images, _), (test_images, _) = tf.keras.datasets.mnist.load_data()
